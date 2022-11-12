@@ -23,14 +23,14 @@ var (
 
 // MoveMessage is used to represent either a movement direction request from the client or an exact player position update from the server.
 type MoveMessage struct {
-	Id   int
-	X int
-	Y int
+	Id int
+	X  int
+	Y  int
 }
 
 // Game contains our networking structures as well as a very simple container for player state.
 type Game struct {
-	conn     net.Conn     // Populated if we are a client.
+	conn     net.Conn
 	listener net.Listener // Populated if we are a server.
 	encoder  *gob.Encoder
 	decoder  *gob.Decoder
